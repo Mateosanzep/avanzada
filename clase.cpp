@@ -33,4 +33,4 @@
 
 
 // ASCII a Binario
-// representacion de numeros negativos y flotantes en binario (ieee)
+// representacion de numeros negativos y flotantes en binario (ieee754)
