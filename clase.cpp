@@ -28,3 +28,9 @@
 
 // Sistema de numeracion base 4, 8 y 16 (convertir con binario)
 
+
+
+
+
+// ASCII a Binario
+// representacion de numeros negativos y flotantes en binario (ieee)
