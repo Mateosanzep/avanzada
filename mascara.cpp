@@ -20,6 +20,18 @@ int apagarBit(int x,int pos){ //Apaga un bit en especifico
 	return (x&~(1<<(pos-1)));
 }
 
+int prenderVariosBits(int x){//usa la mascara para prender los bits en esa posicion
+	return x|(0b10101010);
+}
+
+int cambiarVariosBits(int x){//apaga o prende los bits en cierta posicion
+	return  x^(0b1010100);
+}
+
+int apagaTodosParesBits(int x){//apaga todo los bits en las posiciones pares usando la mascara
+	return x&(0x55555555);//equivale en hex a bits (0101) y lo contrario es 0xAA (1010)
+}
+
 int main (){
 	//Se usan las mascaras para saber si estan prendidos los bits
     int x=13;
@@ -39,6 +51,12 @@ int main (){
 	cout<<cambiarBit(x,n)<<endl;
 	
 	cout<<apagarBit(x,n)<<endl;
+
+	cout<<prenderVariosBits(x)<<endl;
+
+	cout<<cambiarVariosBits(x)<<endl;
+
+	cout<<apagaTodosParesBits(x)<<endl;
 	
 	return 0;
 }
