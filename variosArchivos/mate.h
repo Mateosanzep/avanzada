@@ -1,3 +1,12 @@
-int suma(int, int);
+#ifndef mate_h
+#define mate_h
 
-int resta(int, int);
+double suma(double, double);
+
+double resta(double, double);
+
+double areaCirculo(double);
+
+double areaRombo(double, double);
+
+#endif

@@ -1,8 +1,20 @@
+#include <iostream>
+using namespace std;
+#include "mate.h"
+#include "constantes.h"
 
-int suma(int a, int b){
+double suma(double a, double b){
     return a + b;
 }
 
-int resta(int a, int b){
+double resta(double a, double b){
     return a - b;
+}
+
+double areaCirculo(double radio){
+    return pi * radio * radio;
+}
+
+double areaRombo(double a, double b){
+    return ( a * b) / 2;
 }

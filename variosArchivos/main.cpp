@@ -1,12 +1,13 @@
 #include <iostream>
 #include "mate.h"
+#include "constantes.h"
+#include "auxiliares.h"
 using namespace std;
 
 
 int main(){
-    int x = 2;
-    int y = 3;
-    cout << suma(x, y)<<endl;
-    cout << resta(x, y)<<endl;
+    cout<<pi<<endl;
+    int opcion = escogerOperacion();
+    cout<<opcion<<endl;
     return 0;
 }
