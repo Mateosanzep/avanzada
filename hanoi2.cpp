@@ -1,20 +1,7 @@
 #include <iostream>
 using namespace std;
 #define altura 5
-//constants for visualization
-#define ALTURA 5      //number of disks
-#define ANCHO_TORRE 11 //width of each tower representation
-//characters for ascii drawing
-const char* DISCO_BORDE = "*";
-const char* DISCO_MEDIO = "o";
-const char* POSTE_CARACTER = "|";
-const char* BASE_CARACTER = "=";
 
-//color codes
-const char* COLOR_RESET = "\033[0m";
-const char* COLOR_DISCO = "\033[1;34m"; //blue
-const char* COLOR_POSTE = "\033[1;33m"; //yellow
-const char* COLOR_BASE = "\033[1;31m";  //red
 int torres[altura];
 int pisos[altura];
 int alturas[3];
@@ -40,14 +27,17 @@ int main(){
     alturas[1]=0;
     alturas[2]=0;
 
-	while(true){
 	    for(int i=altura-1; i>=0; i--)
 		    dibujar_piso(i);
-    	    cout<<"------------------------------------------------"<<endl;
+
+    	cout<<"------------------------------------------------"<<endl;
 	    
-	    mover_piramide(4, 0, 2, 1);
-	    if (alturas[2]==4) break;
-	}
+	    mover_piramide(5, 0, 2, 1);
+
+		for(int i=altura-1; i>=0; i--)
+		    dibujar_piso(i);
+
+    	cout<<"------------------------------------------------"<<endl;
 }
 
 void mover_piedra(int i, int inicio, int fin){
@@ -60,11 +50,17 @@ void mover_piedra(int i, int inicio, int fin){
 
 void mover_piramide (int tam, int inicio, int termina, int aux){
 	int tamano2 = tam -1;
-	if (tam == 1) mover_piedra(tam,inicio,termina);
+	if (tam == 1) {
+		mover_piedra(tamano2,inicio,termina);
+	} else{
 	mover_piramide(tamano2, inicio, aux, termina);
-	mover_piedra(tam, inicio,termina);
+	mover_piedra(tamano2, inicio,termina);
+	for(int i=altura-1; i>=0; i--)
+		    dibujar_piso(i);
+
+    	cout<<"------------------------------------------------"<<endl;
 	mover_piramide(tamano2, aux, termina, inicio);
-	
+	}
 }
 
 void dibujar_piso(int p){
