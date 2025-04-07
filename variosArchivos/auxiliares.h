@@ -1,9 +1,11 @@
 #ifndef auxiliares_h
 #define auxiliares_h
+#include <utility>
+using namespace std;
 
 double pedirUnNumero();
 
-double pedirDosNumeros();
+pair<double, double> pedirDosNumeros();
 
 int escogerOperacion();
 

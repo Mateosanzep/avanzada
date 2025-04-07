@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 using namespace std;
 #include "mate.h"
 #include "constantes.h"
@@ -9,12 +10,11 @@ double pedirUnNumero(){
     return a;
 }
 
-double pedirDosNumeros(){
-    double a;
-    double b;
-    double arr[2]={a,b};
-    cin>>a>>b;
-    return arr[2];
+pair<double, double> pedirDosNumeros() {
+  double a;
+  double b;
+  cin >> a >> b;
+  return make_pair(a, b);
 }
 
 int escogerOperacion(){
@@ -29,13 +29,17 @@ int escogerOperacion(){
 
 void mostrarResultado(int opcion){
     if(opcion==1){
-        cout<<"Resultado: "<<suma(pedirDosNumeros())<<endl;
+        pair<double, double> num = pedirDosNumeros();
+        cout << "Resultado: " << suma(num.first, num.second) << endl;
     }
     else if(opcion==2){
-        cout<<"Resultado: "<<resta(pedirDosNumeros())<<endl;
+        pair<double, double> num = pedirDosNumeros();
+        cout << "Resultado: " << resta(num.first, num.second) << endl;
     } else if(opcion==3){
-        cout<<"Resultado: "<<areaCirculo(pedirUnNumero(), pi)<<endl;
+        double num = pedirUnNumero();
+        cout<<"Resultado: "<<areaCirculo(num)<<endl;
     } else if(opcion==4){
-        cout<<"Resultado: "<<areaRombo(pedirDosNumeros())<<endl;
+        pair<double, double> num = pedirDosNumeros();
+        cout << "Resultado: " << areaRombo(num.first, num.second) << endl;
     }
 }
