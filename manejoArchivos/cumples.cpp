@@ -65,8 +65,6 @@ int main(){
     unsigned int dia = static_cast<unsigned>(ymd.day());
     unsigned int mes = static_cast<unsigned>(ymd.month());
     
-    mes = 12;
-    dia = 31;
 
     sort(infoVec.begin(), infoVec.end(), [](const info& a, const info& b) {
         if (a.dates[1] != b.dates[1])
@@ -80,7 +78,7 @@ bool encontrado = false;
         int diaCumple = persona.dates[0];
 
         if (mesCumple > mes || (mesCumple == mes && diaCumple >= dia)) {
-            cout << "El cumpleaños más próximo es:\n";
+            cout << "El cumpleaños más próximo es:"<<endl;
             cout << persona.nombre << endl;
             cout << persona.dates[0] << "/" << persona.dates[1] << "/" << persona.dates[2] << endl;
             encontrado = true;
