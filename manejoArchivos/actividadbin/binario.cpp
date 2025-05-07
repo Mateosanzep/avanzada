@@ -16,7 +16,9 @@ int main(){
     ifile>>largo>>ancho;
     cout<<largo<<endl<<ancho<<endl;
     char prim;
-    ifile>>prim;
+    ifile.get(prim);
+    bitset<8> x(prim);
+    cout<<x<<endl;
 
     for(int i=1;i<201;i++){
         char primero;
